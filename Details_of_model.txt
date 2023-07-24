@@ -1,0 +1,37 @@
+It is a Diabetes Prediction Model that helps predict the weather a patient
+has diabetes or not.
+First, we have a uncleaned data,by using various technique we cleaned our data
+and made the data suitable to train the model.
+Then we performed various operations on data to know more about the data.
+we split our data in 2 parts 80% for training and 20% for testing. 
+Then we trained our model on various algorithim like SVM,Logistic regression,
+Decision Tree and Random forest
+we got the maximum accuracy from Random forest of 99%.
+The model is then saved to the hard disk using the pickle library and the model
+is saved in the .PKL extension
+Then we used flask to develop web application for the model to provide it a interface.
+Our model has various input parameters so before using the model read the following :
+
+INPUT PARAMETERS :
+1. Gender :
+	Input 1 for Male and  for 0 Female
+
+2. Age : age of the person 
+
+3. Urea : urea test
+
+4. Cr : Chromium test resultt
+
+5.HbA1c : Hemoglobin A1C test shows average blood sugar level
+
+6.chol : Cholestrol test
+
+7.TG : Thyroglonulin  test
+
+8.HDL : High-density lipoprotien test(good cholestrol)
+
+9.LDL :Low-density Lipoprotien test(bad chloestrol)
+
+10.VLDL :very-low-density lipoprotien test
+
+11.BMI :body-mass index
