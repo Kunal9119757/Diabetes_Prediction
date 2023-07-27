@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>first program!</title>
+    <style>
+
+        *{
+            margin: 0;
+        }
+        body
+        {
+            background-color: #86c1d2;
+        }
+
+        .heading{
+            background-color: black;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 10px 16px;
+            margin-bottom: 20px; 
+        }
+
+        .main{
+            background-color: #86c1d2;
+        }
+
+        .now{
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+        .sub-heading{
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .main p{
+            margin-left: 20px;
+            margin-bottom: 10px;
+            line-height: 20px;
+        }
+
+        span{
+            color: #1d155d;
+            font-weight: bold;
+        }
+
+        .prediction{
+            position: absolute;
+            left: 40%;
+            margin-top: 50px;
+        }
+
+        form{
+        padding: 20px;
+        }
+
+        
+        label{
+            padding: 10px;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        input{
+            border-radius:30px;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+            width: 300px;
+            transition: cubic-bezier();
+        }
+
+        input:hover{
+            background-color: rgb(185, 180, 180);
+            transform: scaleX(1.2);
+        }
+
+        .sub{
+            position: relative;
+            text-align: center;
+            right: 150px;
+            margin: 20px;
+            width: 500px;
+            border: none;
+            color: black;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 2px 3px 2px rgb(223, 63, 63);
+            transition: cubic-bezier();
+        }
+
+        .sub input{
+            width: 100%;
+            color: black;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .sub input:hover{
+            transform: scaleX(2);
+            color:red;
+        }
+
+       h3{
+        font-size: 2rem;
+        
+       }
+
+         
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="heading">
+        <h1 >Diabetes Prediction</h1>
+    </div>
+
+    <div class="main">
+
+        <div>  
+        <h2 class="sub-heading">What is Diabetes?</h2>
+        <p>Diabetes is a chronic (long-lasting) health condition that affects how your body turns food into energy.
+        </p>
+        
+        <p>
+            Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin. Insulin acts like a key to let the blood sugar into your body’s cells for use as energy.    
+        </p>
+
+        <p>
+            With diabetes, your body doesn’t make enough insulin or can’t use it as well as it should. When there isn’t enough insulin or cells stop responding to insulin, too much blood sugar stays in your bloodstream. Over time, that can cause serious health problems, such as heart disease, vision loss, and kidney disease.
+        </p>
+
+        <p>The International Diabetes Federation (IDF) estimates that as many as 212 million people, or half of all adults currently living with diabetes, are undiagnosed</p>
+
+        <p>We have created a <span>online Diabetes Risk assesment</span> which aims to predict weather a individual has diabetes or not.
+       </p>
+
+       <p>
+        It can also be used in  laboratries to test weather a person is diabetic or not.
+       </p>
+    </div>
+
+    </div>
+
+    <h1 class="now">Predict NOW</h1>
+
+    <div class="prediction">
+
+    
+    {% if label %}
+        {% if label==1 %}
+            <h3 style="color:red;">Diabetic</h3>
+        {% else %}
+        <h3 style="color:green;">Not Diabetic</h3>
+        {% endif %}
+    {% endif %}
+
+    <form action="/result" method="post">
+        <label for="Gender" style="margin:100px;">Gender</label> <br>
+        <input type="text" id="Gender" name="Gender" required>
+
+<br>
+
+        <label for="AGE" style="margin:100px;">Age</label><br>
+        <input type="text" id="AGE" name="AGE" required>
+
+<br>
+        <label for="Urea" style="margin:100px;">Urea</label><br>
+        <input type="text" id="Urea" name="Urea" required>
+<br>
+        <label for="Cr" style="margin:100px;">Cr</label><br>
+        <input type="text" id="Cr" name="Cr" required>
+<br>
+
+        <label for="HbA1c" style="margin:100px;">HbA1c</label><br>
+        <input type="text" id="HbA1c" name="HbA1c" required>
+<br>
+        <label for="Chol" style="margin:100px;">Chol</label><br>
+        <input type="text" id="Chol" name="Chol" required>
+<br>
+        <label for="TG" style="margin:100px;">TG</label><br>
+        <input type="text" id="TG" name="TG" required>
+<br>
+        <label for="HDL" style="margin:100px;">HDL</label><br>
+        <input type="text" id="HDL" name="HDL" required>
+<br>
+        <label for="LDL" style="margin:100px;">LDL</label><br>
+        <input type="text" id="LDL" name="LDL" required>
+<br>
+        <label for="VLDL" style="margin:100px;">VLDL</label><br>
+        <input type="text" id="VLDL" name="VLDL" required>
+<br>
+        <label for="BMI" style="margin:100px;">BMI</label><br>
+        <input type="text" id="BMI" name="BMI" required>
+<br>
+        
+<div class="sub">
+
+    <input type="submit" value="submit" style="margin-right: 260px;">
+</div>
+    </form>
+
+    <h2> {{ prediction }} </h2>
+</div>
+</body>
+
+</html>
